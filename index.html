@@ -196,22 +196,6 @@
     .info-card h5 { font-weight: 700; margin-bottom: 8px; font-size: 1rem; }
     .info-card p  { font-size: .88rem; color: rgba(226,232,240,0.6); line-height: 1.65; margin: 0; }
 
-    /* ── Notice banner ── */
-    .notice {
-      background: rgba(253,203,110,0.08);
-      border: 1px solid rgba(253,203,110,0.25);
-      border-radius: 12px;
-      padding: 14px 20px;
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: .85rem;
-      color: rgba(253,203,110,0.9);
-      margin: 0 auto 40px;
-      max-width: 600px;
-      text-align: left;
-      animation: fadeDown .6s .35s ease both;
-    }
-    .notice i { flex-shrink: 0; margin-top: 2px; }
-
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -247,14 +231,20 @@
 
   <!-- Navbar -->
   <nav class="topbar">
-    <a href="#" class="brand">
+    <a href="index.php" class="brand">
       <div class="brand-logo">B</div>
       <span class="brand-name">Bodhivaas</span>
     </a>
     <div style="display:flex;gap:10px;align-items:center;">
-      <a href="https://github.com/yourusername/your-repo" target="_blank" rel="noopener"
-         style="color:rgba(226,232,240,0.5);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:6px;">
-        <i class="fab fa-github"></i> <span class="d-none d-sm-inline">GitHub</span>
+      <a href="login.php?role=student"
+         style="color:rgba(226,232,240,0.7);text-decoration:none;font-size:.88rem;font-weight:600;display:flex;align-items:center;gap:6px;padding:7px 16px;border:1px solid rgba(255,255,255,0.12);border-radius:999px;transition:background .2s;"
+         onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'">
+        <i class="fa fa-user"></i> Student Login
+      </a>
+      <a href="login.php?role=admin"
+         style="background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;text-decoration:none;font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:6px;padding:8px 18px;border-radius:999px;box-shadow:0 4px 14px rgba(108,92,231,0.4);transition:transform .2s,box-shadow .2s;"
+         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(108,92,231,0.5)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 14px rgba(108,92,231,0.4)'">
+        <i class="fa fa-shield-halved"></i> Admin
       </a>
     </div>
   </nav>
@@ -278,25 +268,10 @@
         analytics, and notifications together in one elegant dashboard.
       </p>
 
-      <!-- ⚠️ Notice for GitHub Pages visitors -->
-      <div class="notice">
-        <i class="fa fa-circle-info fa-lg"></i>
-        <div>
-          <strong>GitHub Pages preview.</strong>
-          This is a PHP + MySQL application — it runs on a local server (XAMPP/WAMP).
-          Clone the repo and open <code style="background:rgba(0,0,0,0.3);padding:1px 6px;border-radius:4px;">http://localhost/project/</code> to use the full app.
-        </div>
-      </div>
-
       <div class="btn-group-hero">
-        <!-- Points to localhost where PHP actually runs -->
-        <a href="http://localhost/project/index.php" class="btn-primary-hero" id="goToApp">
+        <a href="index.php" class="btn-primary-hero" id="goToApp">
           <i class="fa fa-rocket"></i>
           Go to Application
-        </a>
-        <a href="https://github.com/yourusername/your-repo#readme" target="_blank" rel="noopener" class="btn-ghost-hero">
-          <i class="fab fa-github"></i>
-          View on GitHub
         </a>
       </div>
 
@@ -313,11 +288,6 @@
   <section class="info-section">
     <div class="info-grid">
       <div class="info-card">
-        <div class="info-icon a"><i class="fa fa-server"></i></div>
-        <h5>Local Setup</h5>
-        <p>Requires PHP 8+ and MySQL. Install XAMPP, import the SQL schema from <code>supabase/migrations/</code>, then visit <code>localhost/project/</code>.</p>
-      </div>
-      <div class="info-card">
         <div class="info-icon b"><i class="fa fa-shield-halved"></i></div>
         <h5>Admin Demo</h5>
         <p>Username: <strong>admin</strong> &nbsp;·&nbsp; Password: <strong>admin123</strong><br>
@@ -333,7 +303,7 @@
   </section>
 
   <footer>
-    &copy; <span id="yr"></span> Bodhivaas &nbsp;·&nbsp; PHP + MySQL Student ERP &nbsp;·&nbsp;
+    &copy; <span id="yr"></span> Bodhivaas &nbsp;·&nbsp;
     <i class="fa fa-phone" style="color:var(--brand-2);"></i> +91 97705 99535
   </footer>
 
